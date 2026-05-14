@@ -1,156 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Student Movie Ticket Booking System</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <main>
-        
-        <section class="input-container">
-          <h1>Student Movie Ticket Booking System</h1>
-          <br><br>
-        <div class="img-container"></div>
 
-        <div class="inputs">
-          <div class="input-control">
-            <label for="inName">Name</label>
-            <input type="text" name="inName" id="inName" />
-          </div>
-          <div class="input-control">
-            <label for="inMovie">Movie</label>
-            <select name="inMovie" id="inMovie">
-              <option value="" selected disabled>Select Movie</option>
-              <option value="Avengers">Avengers</option>
-              <option value="Frozen">Frozen</option>
-              <option value="Kung Fu Panda">Kung Fu Panda</option>
-            </select>
-          </div>
-            <form action="">
-                <div class="input-control">
-                  <label for="inQuantity">Number of Tickets</label>
-                  <input type="number" name="inQuantity" id="inQuantity" />
-                </div>
-      
-                <div class="input-control">
-                  <label for="inSeatType">Seat Type</label>
-                  <div class="radio-control">
-                    <input type="radio" name="inSeatType" id="normal" />
-                    <label for="normal">Normal Seat, RM0.00</label>
-                  </div>
-                  <div class="radio-control">
-                    <input type="radio" name="inSeatType" id="Premium" />
-                    <label for="Premium">Premium Seat, RM5.00</label>
-                  </div>
-                </div>
-      
-                <div class="input-control">
-                  <button class="btn btn-light hidden" type="button">Light Mode</button>
-                  <button class="btn btn-dark" type="button">Dark Mode</button>
-                  <button class="btn btn-blue" type="submit">Calculate Payment</button>
-                </div>
-            </form>
-        </div>
-      </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Movie Ticket Booking System</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
 
-      <div class="summary hidden">
-        <h1>Booking Summary</h1>
-        <div class="output">
-          <table>
-            <tr>
-              <td>
-                <h3>Date</h3>
-              </td>
-              <td>
-                <h3 id="outDate"></h3>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <h3>Customer Name</h3>
-              </td>
-              <td>
-                <h3 id="outCustomerName"></h3>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <h3>Selected Movie</h3>
-              </td>
-              <td>
-                <h3 id="outSelectedMovie"></h3>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <h3>Number of Tickets</h3>
-              </td>
-              <td>
-                <h3 id="outNumberofTickets"></h3>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <h3>Ticket Total</h3>
-              </td>
-              <td>
-                <h3 id="outTicketTotal"></h3>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <h3>Seat Charge</h3>
-              </td>
-              <td>
-                <h3 id="outSeatCharge"></h3>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <h2>Final Payment: </h2>
-              </td>
-              <td>
-                <h3 id="outFinalPayment">RM 0.00</h3>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <h2>Actions</h2>
-              </td>
-              <td>
-                <button class="btn btn-red">Delete</button>
-              </td>
-            </tr>
-          </table>
+<body>
+  <main>
+
+    <section class="input-container">
+      <h1>Student Movie Ticket Booking System</h1>
+      <br><br>
+      <div class="img-container"></div>
+
+      <div class="inputs">
+        <div class="input-control">
+          <label for="inName">Name</label>
+          <input type="text" name="inName" id="inName" />
         </div>
+        <div class="input-control">
+          <label for="inMovie">Movie</label>
+          <select name="inMovie" id="inMovie">
+            <option value="" selected disabled>Select Movie</option>
+            <option value="Avengers">Avengers</option>
+            <option value="Frozen">Frozen</option>
+            <option value="Kung Fu Panda">Kung Fu Panda</option>
+          </select>
+        </div>
+        <form action="">
+          <div class="input-control">
+            <label for="inQuantity">Number of Tickets</label>
+            <input type="number" name="inQuantity" id="inQuantity" />
+          </div>
+
+          <div class="input-control">
+            <label for="inSeatType">Seat Type</label>
+            <div class="radio-control">
+              <input type="radio" name="inSeatType" id="normal" />
+              <label for="normal">Normal Seat, RM0.00</label>
+            </div>
+            <div class="radio-control">
+              <input type="radio" name="inSeatType" id="Premium" />
+              <label for="Premium">Premium Seat, RM5.00</label>
+            </div>
+          </div>
+
+          <div class="input-control">
+            <button class="btn btn-light hidden" type="button">Light Mode</button>
+            <button class="btn btn-dark" type="button">Dark Mode</button>
+            <button class="btn btn-blue" type="submit">Calculate Payment</button>
+          </div>
+        </form>
       </div>
+    </section>
 
-      <section>
+    <section id="record">
+      <article>
         <h1>Record Booking</h1>
-        <table>
-          <thead>
-            <tr>
-              <td><h4>Name</h4></td>
-              <td><h4>Number of Tickets</h4></td>
-              <td><h4>Ticket Total</h4></td>
-              <td><h4>Final Payment</h4></td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td colspan="4">
-                <center>
-                  No Record Yet
-                </center>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-    </main>
+        <button id="btn-multiDelete" class="btn btn-dark">Select Row</button>
+      </article>
+      <table>
+        <thead>
+          <tr>
+            <td>
+              <h4>Name</h4>
+            </td>
+            <td>
+              <h4>Number of Tickets</h4>
+            </td>
+            <td>
+              <h4>Ticket Total</h4>
+            </td>
+            <td>
+              <h4>Final Payment</h4>
+            </td>
+            <td>
+              <h4>Action</h4>
+            </td>
+          </tr>
+        </thead>
+        <tbody>
 
-    <script src="./app.js"></script>
-  </body>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="summary hidden">
+      <h1>Booking Summary</h1>
+      <div class="output">
+        <table>
+          <tr>
+            <td>
+              <h3>Date</h3>
+            </td>
+            <td>
+              <h3 id="outDate"></h3>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h3>Customer Name</h3>
+            </td>
+            <td>
+              <h3 id="outCustomerName"></h3>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h3>Selected Movie</h3>
+            </td>
+            <td>
+              <h3 id="outSelectedMovie"></h3>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h3>Number of Tickets</h3>
+            </td>
+            <td>
+              <h3 id="outNumberofTickets"></h3>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h3>Ticket Total</h3>
+            </td>
+            <td>
+              <h3 id="outTicketTotal"></h3>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h3>Seat Charge</h3>
+            </td>
+            <td>
+              <h3 id="outSeatCharge"></h3>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h2>Final Payment: </h2>
+            </td>
+            <td>
+              <h3 id="outFinalPayment">RM 0.00</h3>
+            </td>
+          </tr>
+
+        </table>
+      </div>
+    </div>
+
+
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+
 </html>
